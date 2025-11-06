@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-// 👇 name = "product-service" must match the spring.application.name in Product Service
-@FeignClient(name = "product-service", url = "http://localhost:8080/api") // adjust port as per your product service
+@FeignClient(name = "product-service", url = "http://localhost:8080/api")
 public interface ProductClient {
 
     @GetMapping("/product/{id}")

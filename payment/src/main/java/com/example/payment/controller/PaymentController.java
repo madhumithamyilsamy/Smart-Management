@@ -6,8 +6,10 @@ import com.example.payment.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/payments")
+@RequestMapping("/api/payments")
 
 public class PaymentController {
 
@@ -22,5 +24,9 @@ public class PaymentController {
     @GetMapping("/{id}")
     public PaymentDto getPaymentDetails(@PathVariable Long id) {
         return paymentService.getPayment(id);
+    }
+    @GetMapping
+    public List<PaymentDto> getAllPayments() {
+        return paymentService.getAllPayments();
     }
 }

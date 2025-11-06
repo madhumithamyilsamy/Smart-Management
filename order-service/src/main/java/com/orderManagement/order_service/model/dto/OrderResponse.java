@@ -9,7 +9,6 @@ public record OrderResponse(
         String email,
         String status,
         LocalDate orderDate,
+        String paymentStatus,
         List<OrderItemResponse> items
-
-) {
-}
+) { }

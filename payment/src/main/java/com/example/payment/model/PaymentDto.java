@@ -3,17 +3,15 @@ package com.example.payment.model;
 public class PaymentDto {
 
     private Long paymentId;
-    private Long orderId;
+    private String orderId;
     private String paymentMode;
     private Double amount;
     private String status;
     private String message;
-    private enum PaymentMode{
-        CASH,GPAY,UPI,CARD,PAYTM
-    }
+
     public PaymentDto() {}
 
-    public PaymentDto(Long paymentId, Long orderId, String paymentMode, Double amount, String status, String message) {
+    public PaymentDto(Long paymentId, String orderId, String paymentMode, Double amount, String status, String message) {
         this.paymentId = paymentId;
         this.orderId = orderId;
         this.paymentMode = paymentMode;
@@ -22,55 +20,22 @@ public class PaymentDto {
         this.message = message;
     }
 
+    // Getters and Setters
+    public Long getPaymentId() { return paymentId; }
+    public void setPaymentId(Long paymentId) { this.paymentId = paymentId; }
 
-    public Long getPaymentId() {
-        return paymentId;
-    }
-    public void setPaymentId(Long paymentId) {
-        this.paymentId = paymentId;
-    }
+    public String getOrderId() { return orderId; }
+    public void setOrderId(String orderId) { this.orderId = orderId; }
 
-    public Long getOrderId() {
-        return orderId;
-    }
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
-    }
+    public String getPaymentMode() { return paymentMode; }
+    public void setPaymentMode(String paymentMode) { this.paymentMode = paymentMode; }
 
-    public String getPaymentMode() {
-        return paymentMode;
-    }
-    public void setPaymentMode(String paymentMode) {
-        this.paymentMode = paymentMode;
-    }
+    public Double getAmount() { return amount; }
+    public void setAmount(Double amount) { this.amount = amount; }
 
-    public Double getAmount() {
-        return amount;
-    }
-    public void setAmount(Double amount) {
-        this.amount = amount;
-    }
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 
-    public String getStatus() {
-        return status;
-    }
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-    public void setMessage(String message) {
-        this.message = message;
-    }
-    private boolean isPaid;
-    public boolean isPaid() {
-        return isPaid;
-    }
-
-    public void setPaid(boolean isPaid) {
-        this.isPaid = isPaid;
-    }
-
+    public String getMessage() { return message; }
+    public void setMessage(String message) { this.message = message; }
 }

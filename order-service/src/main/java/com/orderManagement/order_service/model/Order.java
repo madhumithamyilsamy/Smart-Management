@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 @Table(name = "orders")
@@ -25,7 +26,9 @@ public class Order {
     private String email;
     private String status;
     private LocalDate orderDate;
-
+    private String paymentMode;
+    private String paymentStatus;
+    private BigDecimal totalAmount;
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
 }

@@ -9,7 +9,7 @@ public class Paymentvalue {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long orderId;
+    private String orderId;
     private String paymentMode;
     private Double amount;
     private String status;
@@ -17,7 +17,7 @@ public class Paymentvalue {
 
     public Paymentvalue() {}
 
-    public Paymentvalue(Long orderId, String paymentMode, Double amount, String status) {
+    public Paymentvalue(String orderId, String paymentMode, Double amount, String status) {
         this.orderId = orderId;
         this.paymentMode = paymentMode;
         this.amount = amount;
@@ -26,8 +26,8 @@ public class Paymentvalue {
 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
-    public Long getOrderId() { return orderId; }
-    public void setOrderId(Long orderId) { this.orderId = orderId; }
+    public String getOrderId() { return orderId; }
+    public void setOrderId(String orderId) { this.orderId = orderId; }
 
     public String getPaymentMode() { return paymentMode; }
     public void setPaymentMode(String paymentMode) { this.paymentMode = paymentMode; }
